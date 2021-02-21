@@ -8,8 +8,6 @@ var opacityPageOne = 100;
 var opacityPageTwo = 0;
 var opacityPageOnePast = 100;
 var opacityPageTwoPast = 0;
-var pageTwoMargin = 100;
-var pageOneMargin = 0;
 
 
 document.addEventListener("wheel", function(e) {
@@ -33,10 +31,6 @@ document.addEventListener("wheel", function(e) {
     if (opacityPageOne < -100) {
       opacityPageOne = -100;
     }
-    pageTwoMargin = pageTwoMargin + 10;
-    if (pageTwoMargin > 100) {
-      pageTwoMargin = 100;
-    }
   }
 
   if (variation<0) {
@@ -48,16 +42,10 @@ document.addEventListener("wheel", function(e) {
     if (opacityPageOne > 100) {
       opacityPageOne = 100;
     }
-    pageTwoMargin = pageTwoMargin - 10;
-    if (pageTwoMargin < 0) {
-      pageTwoMargin = 0;
-    }
   }
 
   document.getElementById("pageone").style.opacity = opacityPageOne/100;
   document.getElementById("pagetwo").style.opacity = opacityPageTwo/100;
-  console.log(pageTwoMargin);
-  document.getElementById("pagetwo").style.marginTop = pageTwoMargin/100;
   // If the opacity of page two is greater than 75, disable all pointer event on the first page 
   // and enable them on the second.
   if (opacityPageTwo >= 75) {

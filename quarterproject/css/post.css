@@ -5,7 +5,7 @@
     font-size: 20px;
     font-family: Courier;
     width: 60%;
-    height: 800px;
+    height: 70%;
     display: grid;
     margin: auto;
     /* three columns in the grid*/
@@ -35,7 +35,7 @@
 }
 
 .vp h1 {
-    color: black;
+    color: #ececec;
     font-size: 20px;
     width: auto; 
     word-wrap: break-word;

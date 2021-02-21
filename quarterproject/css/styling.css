@@ -5,7 +5,7 @@ body {
 
 .pageone {
     display: block;
-    position: fixed;
+    position: absolute;
     padding: 0;
     margin: 0;
     margin-top: 0;
@@ -18,17 +18,28 @@ body {
 
 .pagetwo {
     display: block;
-    position: fixed;
+    position: absolute;
     padding: 0;
-    margin-top: 100%;
+    margin: 0;
+    margin-top: 0;
     margin-left: 0;
-    margin: auto;
     width: 100%;
     height: 100%;
     background-color: #222831;
     opacity: 0%;
     /*disable all pointer events so it does not interfere with first page*/
     pointer-events: none;
+}
+
+.projectspage {
+    display: block;
+    position: absolute;
+    background-color: #222831;
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    scroll-behavior: auto;
+    overflow-y: auto;
 }
 
 .header {
@@ -121,7 +132,7 @@ body {
 
 .socials {
     margin-top: 10px;
-    display: inline-block;
+    display: block;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -129,12 +140,17 @@ body {
 }
 
 .chevron {
-    color: #ececec;
     display: block;
+    margin: auto;
+    margin-top: 12%;
+}
+
+.chevron img {
+    color: #ececec;
     width: 40px;
     height: 80px;
     margin: auto;
-    margin-top: 15%;
+    padding-bottom: 10px;
 }
 
 /* styling or all icons */
