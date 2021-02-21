@@ -1,5 +1,6 @@
 body {
     background-color: #222831;
+    overflow: hidden;
 }
 
 .pageone {
@@ -17,15 +18,17 @@ body {
 
 .pagetwo {
     display: block;
-    position: absolute;
+    position: fixed;
     padding: 0;
-    margin: 0;
     margin-top: 100%;
     margin-left: 0;
+    margin: auto;
     width: 100%;
     height: 100%;
     background-color: #222831;
     opacity: 0%;
+    /*disable all pointer events so it does not interfere with first page*/
+    pointer-events: none;
 }
 
 .header {
