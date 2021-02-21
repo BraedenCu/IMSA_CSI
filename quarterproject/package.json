@@ -1,0 +1,15 @@
+{
+  "name": "quarterproject",
+  "version": "1.0.0",
+  "description": "csi quarter project",
+  "main": "index.js",
+  "author": "Braeden Cullen",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "express": "^4.17.1",
+    "materialize-css": "^1.0.0",
+    "materialize-social": "^1.0.3",
+    "nodemon": "^2.0.7"
+  }
+}
