@@ -54,6 +54,77 @@
     margin-top: 20px;
 }
 
+/* horizontal posts styling */  
+.hps {
+    background-color: #222831;
+    font-size: 20px;
+    font-family: Courier;
+    width: 60%;
+    height: 70%;
+    display: grid;
+    margin: auto;
+    /* three columns in the grid*/
+    grid-template-rows: 1fr 1fr 1fr; 
+}
+
+.hp {
+    margin-top: 30px;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    float: right;
+    overflow: auto;
+}
+
+.hp:hover {
+    cursor: pointer;
+}
+
+.imagesectionofpost {
+    background-color: #222831;
+    display: inline-block;
+    margin-left: 0px;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+.textsectionofpost {
+    background-color: #222831;
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    margin-top: 0px;
+}
+
+.hp img {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.hp h1 {
+    color: #ececec;
+    font-size: 20px;
+    width: auto; 
+    margin-top: 20px;
+    display: inline;
+    word-wrap: break-word;
+    font-family: Courier;
+}
+
+.hp p {
+    color: black;
+    display: inline;
+    font-size: 15px;
+    width: auto; 
+    word-wrap: break-word;
+    font-family: Courier;
+    margin: auto;
+    margin-top: 20px;
+}
 
 .authordatedetails {
     color: black;
@@ -62,22 +133,4 @@
     word-wrap: break-word;
     font-family: Courier;
     margin: auto;
-}
-
-/* horizontal posts styling */  
-.hps {
-    display: grid;
-    margin: auto;
-    width: 60%;
-    background-color: lightblue;
-    overflow: auto;
-}
-
-.hp {
-    margin-top: 30px;
-    width: 300px;
-    height: 400px;
-    background-color: lightblue;
-    float: right;
-    overflow: auto;
 }
