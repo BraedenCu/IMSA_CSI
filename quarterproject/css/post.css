@@ -1,10 +1,10 @@
 
 /* vertical posts styling stuff */
 .vps {
-    background-color: white;
+    background-color: #222831;
     font-size: 20px;
     font-family: Courier;
-    width: 40%;
+    width: 60%;
     height: 800px;
     display: grid;
     margin: auto;
@@ -14,9 +14,10 @@
 
 .vp {
     margin-top: 30px;
+    margin-left: 20px;
     width: auto;
     height: 600px;
-    background-color: white;
+    background-color: #222831;
     float: right;
     overflow: auto;
 }

@@ -1,10 +1,64 @@
+console.log('running');
 
 const pageone = document.getElementById("pageone");
 const pagetwo = document.getElementById("pagetwo");
-const scrollCount = 0;
+const body = document.getElementsByTagName("body");
+var scrollCount = 0;
+var opacityPageOne = 100;
+var opacityPageTwo = 0;
+var opacityPageOnePast = 100;
+var opacityPageTwoPast = 0;
+var pageTwoMargin = 100;
+var pageOneMargin = 0;
 
-function opacity() {
-  pageone.style.opacity = '10%';
-}
 
-pageone.addEventListener('wheel', opacity);
+document.addEventListener("wheel", function(e) {
+  // get the old value of the translation (there has to be an easier way than this)
+  //var oldVal = parseInt(document.getElementById("body").style.transform.replace("translateY(","").replace("px)",""));
+  // to make it work on IE or Chrome
+
+  var variation = parseInt(e.deltaY);
+
+  variation = variation * -1;
+
+  opacityPageOnePast = opacityPageOne;
+  opacityPageTwoPast = opacityPageTwo;
+
+  if (variation>0) {
+    opacityPageOne = opacityPageOne + 10;
+    if (opacityPageOne > 100) {
+      opacityPageOne = 100;
+    }
+    opacityPageTwo = opacityPageTwo - 10;
+    if (opacityPageOne < -100) {
+      opacityPageOne = -100;
+    }
+    pageTwoMargin = pageTwoMargin + 10;
+    if (pageTwoMargin > 100) {
+      pageTwoMargin = 100;
+    }
+  }
+
+  if (variation<0) {
+    opacityPageOne = opacityPageOne - 10;
+    if (opacityPageOne < -100) {
+      opacityPageOne = -100;
+    }
+    opacityPageTwo = opacityPageTwo + 10;
+    if (opacityPageOne > 100) {
+      opacityPageOne = 100;
+    }
+    pageTwoMargin = pageTwoMargin - 10;
+    if (pageTwoMargin < 0) {
+      pageTwoMargin = 0;
+    }
+  }
+
+  document.getElementById("pageone").style.opacity = opacityPageOne/100;
+  document.getElementById("pagetwo").style.opacity = opacityPageTwo/100;
+  console.log(pageTwoMargin);
+  document.getElementById("pagetwo").style.marginTop = pageTwoMargin/100;
+
+  return false;
+  
+}, true);
