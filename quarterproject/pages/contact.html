@@ -1,3 +1,6 @@
+<!--
+Braeden Cullen, 3/6/21, portfolio website aimed to attract potential employers
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,15 +19,18 @@
         <!--Add fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-
+        <!--Add favicon-->
+        <link rel="icon" href="../images/favicon.ico" type="very cute dog">
     </head>
 
-    <body>
-        <div class="projectspage">
+    <!--Contact form-->
+    <body id="contact">
+        <div class="projectspage" id="contactspage">
+            <!--navigation bar-->
             <div class="navigationbar">
                 <button onClick="window.location.href='../index.html'">Home</button>
                 <button onClick="window.location.href='projects.html'">Projects</button>
-                <button onClick="window.location.href='../index.html'"><img src="/images/b.svg" class="logo" alt="logo"/></button>
+                <button onClick="window.location.href='../index.html'" class="logobutton"><img src="../images/b.svg" class="logo" alt="logo"/></button>
                 <button onClick="window.location.href='blog.html'">Blog</button>
                 <button onClick="window.location.href='contact.html'" class="selectedbutton">Contact</button>
             </div>
@@ -32,57 +38,41 @@
             <h1 class="center header">
                 Contact Me
             </h1>
-
+            <!--socials-->
             <div class="socials">
-                <a class="btn-floating btn-small waves-light center social fa fa-twitter socials" href="https://twitter.com/circuitchicken"></a>
+                <a class="btn-floating btn-small waves-light center social fa fa-twitter socials" href="https://twitter.com/elonmusk"></a>
                 <a class="btn-floating btn-small waves-light center social fa fa-linkedin socials" href="https://www.linkedin.com/in/braeden-cullen-4835371a1/"></a>
                 <a class="btn-floating btn-small waves-light center social fa fa-github socials" href="https://github.com/BraedenCu/"></a>
             </div>
-
-            <div class="row">
-                <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col s6">
-                      <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                      <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                      <input id="last_name" type="text" class="validate">
-                      <label for="last_name">Last Name</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                      <label for="disabled">Disabled</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="password" type="password" class="validate">
-                      <label for="password">Password</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="email" type="email" class="validate">
-                      <label for="email">Email</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col s12">
-                      This is an inline input field:
-                      <div class="input-field inline">
-                        <input id="email_inline" type="email" class="validate">
-                        <label for="email_inline">Email</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+            <p class="paragraph center" style="margin-top: 2%;">
+              Feel free to contact me with research opportunities by filling out this form:
+            </p>
+            <!--form, it is styled in a grid fashion so the text inputs in the first div are part of the first grid and so on-->
+            <form>
+              <div class="formgrid">
+                <div>
+                  <label for="name" class="center">Full name:</label><br>
+                  <input type="text" id="name"><br>
+                  <label for="email">Email address:</label><br>
+                  <input type="text" id="email">
+                  <label for="position">Name of position:</label><br>
+                  <input type="text" id="position">
+                </div>
+                <div>
+                  <label for="numer">Phone number:</label><br>
+                  <input type="text" id="phonenumber"><br>
+                  <label for="message">Message:</label><br>
+                  <input type="text" id="message">
+                  <label for="company">Affiliated Organization:</label><br>
+                  <input type="text" id="organization">
+                </div>
               </div>
-            
+              
+              <input onClick="" type="submit" id="submitbutton" value="Submit Form" class="submitbutton">
+            </form>
         </div>
+        <!--Run the form.js file for form processing and user alerting-->
+        <script src="../js/form.js"></script>
     </body>
 
 </html>

@@ -1,34 +1,50 @@
-body {
+html {
     background-color: #222831;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+body .pageone {
+    background-color: #222831;
+    min-height: 100vh !important;
+    height: 100vh;
     overflow: hidden;
 }
 
 .pageone {
     display: block;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    margin-top: 0;
-    margin-left: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
+    padding: 0;
+    margin: 0; 
     background-color: #222831;
     opacity: 100%;
 }
 
 .pagetwo {
     display: block;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    margin-top: 0;
-    margin-left: 0;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100vh !important;
+    height: 100vh;
+    width: auto;
     background-color: #222831;
-    opacity: 0%;
-    /*disable all pointer events so it does not interfere with first page*/
-    pointer-events: none;
+    opacity: 100%;
+    pointer-events: all;
+}
+
+.pagethree {
+    display: block;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100vh !important;
+    height: 100vh;
+    width: auto;
+    background-color: #222831;
+    opacity: 100%;
+    pointer-events: all;
 }
 
 .projectspage {
@@ -39,7 +55,7 @@ body {
     height: 100%;
     opacity: 100%;
     scroll-behavior: auto;
-    overflow-y: auto;
+    overflow-y: auto !important;
 }
 
 .header {
@@ -58,23 +74,38 @@ body {
     width: 60%;
 }
 
+.disclaimer {
+    width: 60%;
+    color: black;
+    margin: auto;
+    margin-top: 6vh;
+    text-align: center;
+}
+
 .navigationbar {
     color: black;
     font-size: 20px;
     font-family: Courier;
     display: grid;
+    position: relative;
+    width: 44%;
     margin: auto;
     margin-top: 20px;
-    width: 30%;
     /* three columns in the grid*/
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    gap: 5px;
+    gap: 0.2%;
 }
 
+.fixedcenter {
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translateX(-50%, -50%);
+}
 
 .navigationbar button {
-    /*Must use important to overide materialize css defaults*/
     width: auto;
+    display: block;
     height: 40px;
     background-color: #222831;
     color: black;
@@ -83,33 +114,56 @@ body {
     margin-top: 0px;
 }
 
+.logobutton {
+    width: auto;
+    display: block;
+    height: 40px;
+    background-color: #222831;
+    color: black;
+    border: none;
+    border-radius: 5%;
+    margin-top: 0px;
+}
+
+
+.logobutton:focus {
+    background-color: #222831 !important;
+}
 .navigationbar button:hover {
     cursor: pointer;
     opacity: 0.6;
 }
 
 .navigationbar button:focus {     
-    background-color: #f2a365 !important;    
+    background-color: #ff6768;    
 }
 
 .selectedbutton {
     /*Must use important to overide materialize css default size*/
     width: auto !important;
-    background-color: #f2a365 !important;
-    color: f2a365;
+    background-color: #ff6768 !important;
+    color: #ff6768;
     border: none;
 }
 
 .logo {
+    /*Must use important to overide materialize css defaults*/
     width: 60px;
     height: 60px;
     margin: auto;
     margin-top: 0px !important;
+    background-color:#222831 !important;
+}
+
+.logo:focus {
+    /*Must use important to overide materialize css defaults*/
+    background-color: #222831 !important;    
 }
 
 .circleImage {
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -121,7 +175,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 60%;
+    width: 70%;
 }
 
 .profilephotoandbio p {
@@ -151,16 +205,47 @@ body {
 
 .chevron {
     display: block;
-    margin: auto;
-    margin-top: 12%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chevronpageone {
+    display: block;
+    margin-top: 0.1vh;
+    display: block;
+    border: none;
+}
+
+.chevronpagetwo{
+    margin-bottom: 5%;
+}
+
+.chevronupsidedown {
+    transform: rotate(0.5turn);
 }
 
 .chevron img {
     color: #ececec;
     width: 40px;
     height: 80px;
-    margin: auto;
-    padding-bottom: 10px;
+}
+
+.chevron button {
+    /*Must use important to overide materialize css defaults*/
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    background-color:#222831 !important;
+}
+
+.chevron button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.chevron button:active {
+    /*Must use important to overide materialize css defaults*/
+    background-color:#222831 !important;
 }
 
 /* styling or all icons */
@@ -179,38 +264,74 @@ body {
 
 /* Github */
 .fa-github {
+    /*Must use important to overide materialize css defaults*/
     background: #24292e !important;
     color: white;
 }
 
 /* Twitter */
 .fa-twitter {
+    /*Must use important to overide materialize css defaults*/
     background: #55ACEE !important;
     color: white;
 }
 
 /* linkedin */
 .fa-linkedin {
+    /*Must use important to overide materialize css defaults*/
     background: #007bb5 !important;
     color: white;
 }
 
 /* youtube */
 .fa-youtube {
+    /*Must use important to overide materialize css defaults*/
     background: #bb0000 !important; 
     color: white;
 }
 
-/*
-.projectshome {
-
+.enlargedblogposts {
+    display: block;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    margin-top: 10%;
+    margin: auto;
+    background-color: #ffffff;
+    opacity: 100%;
 }
 
-.experiencehome {
-
+.formgrid {
+    color: black;
+    font-size: 20px;
+    font-family: Courier;
+    display: grid;
+    margin: auto;
+    margin-top: 5%;
+    width: 70%;
+    /* three columns in the grid*/
+    grid-template-columns: 1fr 1fr; 
+    gap: 4%;
 }
 
-.educationhome {
-
+.submitbutton {
+    display: block;
+    height: 40px;
+    margin-left: auto;
+    font-family: Courier;
+    margin-right: auto;
+    background-color: #ff6768;
+    border: none;
+    margin-top: 5%;
+    border-radius: 5%;
 }
-*/
+
+.fixedformmessage {
+    position: fixed;
+    margin: auto;
+    margin-top: 50%;
+    width: 30%;
+    height: 10%;
+    background-color: #ff6768;
+}
+

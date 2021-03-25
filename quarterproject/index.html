@@ -1,5 +1,39 @@
+<!--
+Braeden Cullen, 3/6/21, portfolio website aimed to attract potential employers
+url for my site: students.imsa.edu/~bcullen    
+    
+The purpose of this project is to present blog posts and my personal projects in 
+the field of softwarer development in order to attract potential employers to fill 
+out my contact form with a job offer.
+The index.html file is the homepage that includes featured projects and blog posts while also including
+links to my social media and a mission statement. The chevron at the bottom of this page will lead to a view of my featured projects. Pressing the chevron again will lead to 
+a view of my featured blog posts, and pushing it again will bring you back to the top of the page.
+Th three other pages are under the pages directory, and there content is relatively self explanatory. The blog.html file contains horizontal posts (blog posts), the projects.html file contains
+vertical posts (projects), and the contact.html file contains a form for prospective employers.
+This project also makes some use of javascript to create the scrolling effect
+found on the first page once the chevron is clicked and also to gather form data on the contact page. 
+The javascript I created for this project is the js directory (although some of those files 
+belong to the materialize css library I used for this probject).
+
+
+Links to sites that I made use of during the creaiton of this project:
+https://stackoverflow.com/questions/22288494/margin-top-in-percentage-not-working-as-expected
+https://materializecss.com/
+https://www.w3schools.com/html/default.asp
+https://www.w3schools.com/css/default.asp
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+https://colorhunt.co/palette/179373
+https://developers.google.com/fonts/docs/getting_started
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+https://terrymooreii.github.io/materialize-social/
+https://nodemon.io/
+https://scotch.io/tutorials/implementing-a-scroll-based-animation-with-javascript
+https://stackoverflow.com/
+-->
+
+
 <!DOCTYPE html>
-<html style="scroll-behavior: smooth;">
+<html>
     <head>
         <title>Breaden Cullen Portfolio</title>
         <!--Add fonts-->
@@ -18,73 +52,170 @@
         <!--Add fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-
+        <!--Add favicon-->
+        <link rel="icon" href="images/favicon.ico" type="very cute dog">
     </head>
     <body>
-        <div class="pageone" id="pageone">
-            <div class="navigationbar">
-                <button onClick="window.location.href='index.html'" class="selectedbutton">Home</button>
-                <button onClick="window.location.href='pages/projects.html'">Projects</button>
-                <button onClick="window.location.href='index.html'"><img src="/images/b.svg" class="logo logomargin" alt="logo"/></button>
-                <button onClick="window.location.href='pages/blog.html'">Blog</button>
-                <button onClick="window.location.href='pages/contact.html'">Contact</button>
-            </div>
-
-            <div class="profilephotoandbio">
-                <img src="images/dogRidingTurtle.gif" alt="Cute Dog" class="circleImage">
-                <h1>
-                    Braeden Cullen
-                </h1>
-                <p class="paragraph center">
-                    I am a student developer from the Illinois mathematics and science academy interested in Machine Learning, IoT, and Robotics.
-                </p>
-                <br>
-                <div class="socials">
-                    <a class="btn-floating btn-small waves-light center social fa fa-twitter socials" href="https://twitter.com/circuitchicken"></a>
-                    <a class="btn-floating btn-small waves-light center social fa fa-linkedin socials" href="https://www.linkedin.com/in/braeden-cullen-4835371a1/"></a>
-                    <a class="btn-floating btn-small waves-light center social fa fa-github socials" href="https://github.com/BraedenCu/"></a>
-                </div>               
-            </div>
-            <div class="chevron">
-                <img src="/images/chevron.svg" class="chevron" alt="chevron"/>
-            </div>
-        </div>
-
-        <script src="js/scroll.js"></script>
-
-        <div class="pagetwo" id="pagetwo">
-            <h1 class="center header">
-                Featured projects
-            </h1>
-            <div class="vps">
-                <div class="vp">
-                    <img src="../images/dogRidingTurtle.gif" alt="Cute Dog">
-                    <h1>
-                        <strong>Dog Prediction With AI</strong>
-                    </h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too
-                    </p>
+        <div>
+            <!--Add custom button scrolling behaviour-->
+            <script src="js/fakescroll.js"></script>
+            
+            <!--Page one-->
+            <div class="pageone" id="pageone">
+                <!--Nav bar-->
+                <div class="navigationbar">
+                    <button onClick="window.location.href='index.html'" class="selectedbutton">Home</button>
+                    <button onClick="window.location.href='pages/projects.html'">Projects</button>
+                    <button onClick="window.location.href='index.html'" class="logobutton"><img src="images/b.svg" class="logo logomargin" alt="logo"/></button>
+                    <button onClick="window.location.href='pages/blog.html'">Blog</button>
+                    <button onClick="window.location.href='pages/contact.html'">Contact</button>
                 </div>
                 
-                <div class="vp">
-                    <img src="../images/dogRidingTurtle.gif" alt="Cute Dog">
+                <!--Profile photo and mission statement info-->
+                <div class="profilephotoandbio">
+                    <img src="images/dogRidingTurtle.gif" alt="Cute Dog" class="circleImage">
                     <h1>
-                        <strong>Dog Prediction With AI</strong>
+                        Braeden Cullen
                     </h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too
+                    <p class="paragraph center">
+                        I am a student developer from the Illinois mathematics and science academy interested in Machine Learning, IoT, and Robotics. I am currently seeking a 
+                        machine learning internship for the upcoming summer cohort. 
                     </p>
+                    <br>
+                    <!--Social buttons, inherit from materialize css defaults then overwrite with custom classes-->
+                    <div class="socials">
+                        <a class="btn-floating btn-small waves-light center social fa fa-twitter socials" href="https://twitter.com/elonmusk"></a>
+                        <a class="btn-floating btn-small waves-light center social fa fa-linkedin socials" href="https://www.linkedin.com/in/braeden-cullen-4835371a1/"></a>
+                        <a class="btn-floating btn-small waves-light center social fa fa-github socials" href="https://github.com/BraedenCu/"></a>
+                    </div>               
+                </div>
+                <!--Chevron at button of first page, also call the smoothScroll function on press to scroll down to the next page automatically-->
+                <div class="chevron">
+                    <button class="chevron chevronpageone">
+                        <img src="images/chevron.svg" class="chevronpageone" style="margin-top: 160px" onclick="smoothScroll('.pagetwo')" alt="chevron"/>
+                    </button>
+                </div>
+                <!--Disclaimer-->
+                <p class="disclaimer">
+                    Disclaimer: this website is not advertising real services and all information found on this site should be taken with caution.
+                </p>
+            </div>
+            <!--Page two information-->
+            <div class="pagetwo" id="pagetwo">
+                <div class="chevron">
+                    <button class="chevron">
+                        <img src="images/chevron.svg" class="chevronupsidedown" onclick="smoothScroll('.pageone')" alt="chevron"/>
+                    </button>
                 </div>
 
-                <div class="vp" onClick="window.location.href='../index.html'">
-                    <img src="../images/dogRidingTurtle.gif" alt="Cute Dog">
-                    <h1>
-                        <strong>Dog Prediction With AI</strong>
-                    </h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too
-                    </p>
+                <h1 class="center header">
+                    Featured projects
+                </h1>
+                <!--Vertical posts system to display three featured posts on the second page-->
+                <div class="vps">
+                    <div class="vp">
+                        <img src="images/dogRidingTurtle.gif" alt="Cute Dog">
+                        <h1>
+                            <strong>Dog Prediction With AI</strong>
+                        </h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too
+                        </p>
+                    </div>
+                    
+                    <div class="vp">
+                        <img src="images/dogRidingTurtle.gif" alt="Cute Dog">
+                        <h1>
+                            <strong>Dog Prediction With AI</strong>
+                        </h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too
+                        </p>
+                    </div>
+
+                    <div class="vp" onClick="window.location.href='../index.html'">
+                        <img src="images/dogRidingTurtle.gif" alt="Cute Dog">
+                        <h1>
+                            <strong>Dog Prediction With AI</strong>
+                        </h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too
+                        </p>
+                    </div>
+                </div>
+                <div class="chevron">
+                    <button class="chevron">
+                        <img src="images/chevron.svg" class="chevronpagetwo" onclick="smoothScroll('.pagethree')" alt="chevron"/>
+                    </button>
+                </div>
+            </div>
+            <!--Page two-->
+            <div class="pagethree" id="pagethree">
+                <div class="chevron">
+                    <button class="chevron">
+                        <img src="images/chevron.svg" class="chevronupsidedown" onclick="smoothScroll('.pagetwo')" alt="chevron"/>
+                    </button>
+                </div>
+
+                <h1 class="center header">
+                    Featured posts
+                </h1>
+                <!--Display of featured blog posts (horizontal posts)-->
+                <div class="hps">
+                    <div class="hp">
+                        <div class="imagesectionofpost">
+                            <img src="images/dogRidingTurtle.gif" alt="Cute Dog">
+                        </div>
+                        <div class="textsectionofpost">
+                            <h1>
+                                <strong>Dog Prediction With AI</strong>
+                            </h1>
+                            <br>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too [...] 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Display of featured blog posts (horizontal posts)-->
+                <div class="hps">
+                    <div class="hp">
+                        <div class="imagesectionofpost">
+                            <img src="images/dogRidingTurtle.gif" alt="Cute Dog">
+                        </div>
+                        <div class="textsectionofpost">
+                            <h1>
+                                <strong>Dog Prediction With AI</strong>
+                            </h1>
+                            <br>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too [...] 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Display of featured blog posts (horizontal posts)-->
+                <div class="hps">
+                    <div class="hp">
+                        <div class="imagesectionofpost">
+                            <img src="images/dogRidingTurtle.gif" alt="Cute Dog">
+                        </div>
+                        <div class="textsectionofpost">
+                            <h1>
+                                <strong>Dog Prediction With AI</strong>
+                            </h1>
+                            <br>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer too [...] 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Down chevron-->
+                <div class="chevron">
+                    <button class="chevron">
+                        <img src="images/chevron.svg" class="chevronpagetwo" onclick="smoothScroll('.pageone')" alt="chevron"/>
+                    </button>
                 </div>
             </div>
         </div>
