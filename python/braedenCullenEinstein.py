@@ -14,17 +14,16 @@ def numberValidation(number):
 def computeSum(number):
     #Reverse number using python list slicing syntax (super useful)
     reversedNumber = int("{}".format(number)[::-1])
-    print(number, reversedNumber)
+    print("Number and Reversed Number: {}, {}".format(number, reversedNumber))
     difference = abs(number-reversedNumber)
-    print(difference)
+    print("Difference: {}".format(difference))
     reversedDifference = int("{}".format(difference)[::-1])
-    print(reversedDifference)
+    print("Reversed Difference: {}".format(reversedDifference))
     print(difference+reversedDifference)
 
 def main():
     correctInput = False
-    print("Hello, today you will be playing the Einstein game. First, give a three digit number where the first and the last digits differ by two.")
-    print("\n")
+    print("Hello, today you will be playing the Einstein game. First, give a three digit number where the first and the last digits differ by two. This program will perform calculations on your numbers whose result will always be 1089. Don't beleive me? Try it!")
     while (correctInput!=True):
         try: 
             userNumber = int(input("Your number: "))
