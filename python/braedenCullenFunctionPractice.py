@@ -1,12 +1,12 @@
 
 def chain(x):
-    s = ""
+    s = str(x)
     while x!=1:
-        s+=str(int(x))
         if (x%2)==0:
             x=x/2
         else:
             x=(x*3)+1
+        s+="-" + str(int(x))
     return s
 
 def longestChain(start, end):
@@ -17,7 +17,7 @@ def longestChain(start, end):
         if val >= maxi:
             maxi = val
             largest = i
-    return i
+    return largest
 
 def main():
     try:

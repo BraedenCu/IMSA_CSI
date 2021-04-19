@@ -23,7 +23,7 @@ class Triange():
         c=self.sidec
         if (a==b==c):
             return "equilateral triangle"
-        if (a==b) or (a==c) or (b==c):
+        elif (a==b) or (a==c) or (b==c):
             return "isoscles triangle"
         else:
             return "scalene triangle"

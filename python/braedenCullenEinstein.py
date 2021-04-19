@@ -19,7 +19,7 @@ def computeSum(number):
     print("Difference: {}".format(difference))
     reversedDifference = int("{}".format(difference)[::-1])
     print("Reversed Difference: {}".format(reversedDifference))
-    print(difference+reversedDifference)
+    print("Difference + Reversed Difference: {}".format(difference+reversedDifference))
 
 def main():
     correctInput = False
