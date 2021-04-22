@@ -18,3 +18,24 @@ def main():
 
 if __name__=="__main__":
     main()
+
+
+def travelAccross(self):
+    self.c.draw(self.win)
+    for i in range(1, 401):
+        self.c.move(0, 1)
+        time.sleep(0.001)
+    self.win.getMouse()
+    for i in range(1, 401):
+        self.c.move(1, 0)
+        time.sleep(0.001)
+    self.win.getMouse()
+    for i in range(1, 401):
+        self.c.move(0, -1)
+        time.sleep(0.001)
+    self.win.getMouse()
+    for i in range(1, 401):
+        self.c.move(-1, 0)
+        time.sleep(0.001)
+    self.win.getMouse()
+    self.win.close()
