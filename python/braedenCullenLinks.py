@@ -22,8 +22,9 @@ def longestChain(start, end):
 
 def main():
     try:
-        #x = int(input("Pick a number between 1 and 100: "))
-        largestNum, chainLength = longestChain(1, 100)
+        userInput = (input("Space separated indices for chain test: "))
+        x, y = [int(x) for x in userInput.split()]
+        largestNum, chainLength = longestChain(x, y)
         print("The largest chain is {} characters long, the number that produces this chain is {}".format(chainLength, largestNum))
     except ValueError:
         print("Please enter a valid number")
