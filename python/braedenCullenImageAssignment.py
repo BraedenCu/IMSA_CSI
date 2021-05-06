@@ -4,7 +4,7 @@ import time
 from PIL import Image
 
 def filterPIL(colorRGB, x, y):
-    im = Image.open('resized.jpg')
+    im = Image.open('veryCuteDog.jpg')
     im = im.convert('RGB')
     r, g, b = im.split()
     r = r.point(lambda i: i * (colorRGB[0]/256))
@@ -12,7 +12,7 @@ def filterPIL(colorRGB, x, y):
     b = b.point(lambda i: i * (colorRGB[2]/256))
     out = Image.merge('RGB', (r, g, b))
     out.show()
-
+3
 def main():
     x, y = 500, 500
     r, g, b = [int(x) for x in ((input("Please enter space separated rbg values: ")).split())]
