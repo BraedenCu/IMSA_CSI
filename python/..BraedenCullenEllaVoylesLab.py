@@ -16,7 +16,7 @@ def main():
     for i in list1:
         c = win.getMouse()
         for i in range(0, i):
-            circle = Circle(Point(c.getX(),c.getY()), (radius-(15*i)))
+            circle = Circle(Point(c.getX(),c.getY()), (radius-(10*i)))
             circle.setFill(rand_color())
             circle.draw(win)
 
