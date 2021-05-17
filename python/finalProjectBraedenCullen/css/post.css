@@ -1,0 +1,137 @@
+
+/* vertical posts styling stuff */
+.vps {
+    background-color: #222831;
+    font-size: 20px;
+    font-family: Courier;
+    width: 60%;
+    height: 70%;
+    display: grid;
+    margin: auto;
+    /* three columns in the grid*/
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+
+.vp {
+    margin-top: 30px;
+    margin-left: 20px;
+    width: auto;
+    /*height: 600px;*/
+    height: 600px;
+    background-color: #222831;
+    float: right;
+    overflow: auto;
+}
+
+.vp:hover {
+    cursor: pointer;
+}
+
+.vp img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 400px;
+}
+
+.vp h1 {
+    color: #ececec;
+    font-size: 20px;
+    width: auto; 
+    word-wrap: break-word;
+    font-family: Courier;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.vp p {
+    color: black;
+    font-size: 15px;
+    width: auto; 
+    word-wrap: break-word;
+    font-family: Courier;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* horizontal posts styling */  
+.hps {
+    background-color: #222831;
+    font-size: 20px;
+    font-family: Courier;
+    width: 60%;
+    height: 23%;
+    display: grid;
+    margin: auto;
+    /* three columns in the grid*/
+    grid-template-rows: 1fr 1fr 1fr; 
+}
+
+.hp {
+    margin-top: 30px;
+    width: 100%;
+    height: 200px;
+    background-color: #222831;
+    float: right;
+    overflow: auto;
+}
+
+.hp:hover {
+    cursor: pointer;
+}
+
+.imagesectionofpost {
+    background-color: #222831;
+    display: inline-block;
+    margin-left: 0px;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+.textsectionofpost {
+    background-color: #222831;
+    display: inline-block;
+    width: 75%;
+    height: 100%;
+    margin-top: 0px;
+    margin-left: 2%;
+}
+
+.hp img {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.hp h1 {
+    color: #ececec;
+    font-size: 20px;
+    width: auto; 
+    margin-top: 20px;
+    display: inline;
+    word-wrap: break-word;
+    font-family: Courier;
+}
+
+.hp p {
+    color: black;
+    display: inline;
+    font-size: 15px;
+    width: auto; 
+    word-wrap: break-word;
+    font-family: Courier;
+    margin: auto;
+}
+
+.authordatedetails {
+    color: black;
+    font-size: 10px;
+    width: 1200px; 
+    word-wrap: break-word;
+    font-family: Courier;
+    margin: auto;
+}

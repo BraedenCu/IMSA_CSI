@@ -1,0 +1,337 @@
+html {
+    background-color: #222831;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+body .pageone {
+    background-color: #222831;
+    min-height: 100vh !important;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.pageone {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+    background-color: #222831;
+    opacity: 100%;
+}
+
+.pagetwo {
+    display: block;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100vh !important;
+    height: 100vh;
+    width: auto;
+    background-color: #222831;
+    opacity: 100%;
+    pointer-events: all;
+}
+
+.pagethree {
+    display: block;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100vh !important;
+    height: 100vh;
+    width: auto;
+    background-color: #222831;
+    opacity: 100%;
+    pointer-events: all;
+}
+
+.projectspage {
+    display: block;
+    position: absolute;
+    background-color: #222831;
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    scroll-behavior: auto;
+    overflow-y: auto !important;
+}
+
+.header {
+    color: #ececec;
+    text-align: center;
+    font-size: 35px;
+    font-family: Courier;
+}
+
+.paragraph {
+    color: #ececec;
+    font-size: 20px;
+    word-wrap: break-word;
+    font-family: Courier;
+    margin: auto;
+    width: 60%;
+}
+
+.disclaimer {
+    width: 60%;
+    color: black;
+    margin: auto;
+    margin-top: 6vh;
+    text-align: center;
+}
+
+.navigationbar {
+    color: black;
+    font-size: 20px;
+    font-family: Courier;
+    display: grid;
+    position: relative;
+    width: 44%;
+    margin: auto;
+    margin-top: 20px;
+    /* three columns in the grid*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0.2%;
+}
+
+.fixedcenter {
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translateX(-50%, -50%);
+}
+
+.navigationbar button {
+    width: auto;
+    display: block;
+    height: 40px;
+    background-color: #222831;
+    color: black;
+    border: none;
+    border-radius: 5%;
+    margin-top: 0px;
+}
+
+.logobutton {
+    width: auto;
+    display: block;
+    height: 40px;
+    background-color: #222831;
+    color: black;
+    border: none;
+    border-radius: 5%;
+    margin-top: 0px;
+}
+
+
+.logobutton:focus {
+    background-color: #222831 !important;
+}
+.navigationbar button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.navigationbar button:focus {     
+    background-color: #ff6768;    
+}
+
+.selectedbutton {
+    /*Must use important to overide materialize css default size*/
+    width: auto !important;
+    background-color: #ff6768 !important;
+    color: #ff6768;
+    border: none;
+}
+
+.logo {
+    /*Must use important to overide materialize css defaults*/
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    margin-top: 0px !important;
+    background-color:#222831 !important;
+}
+
+.logo:focus {
+    /*Must use important to overide materialize css defaults*/
+    background-color: #222831 !important;    
+}
+
+.circleImage {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profilephotoandbio {
+    margin-top: 5%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 70%;
+}
+
+.profilephotoandbio p {
+    margin-top: 40px;
+    width: 60%; 
+}
+
+.profilephotoandbio h1 {
+    color: #ececec;
+    text-align: center;
+    font-size: 50px;
+    font-family: Courier;
+}
+
+.center {
+    text-align: center;
+}
+
+.socials {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.chevron {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chevronpageone {
+    display: block;
+    margin-top: 0.1vh;
+    display: block;
+    border: none;
+}
+
+.chevronpagetwo{
+    margin-bottom: 5%;
+}
+
+.chevronupsidedown {
+    transform: rotate(0.5turn);
+}
+
+.chevron img {
+    color: #ececec;
+    width: 40px;
+    height: 80px;
+}
+
+.chevron button {
+    /*Must use important to overide materialize css defaults*/
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    background-color:#222831 !important;
+}
+
+.chevron button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.chevron button:active {
+    /*Must use important to overide materialize css defaults*/
+    background-color:#222831 !important;
+}
+
+/* styling or all icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Github */
+.fa-github {
+    /*Must use important to overide materialize css defaults*/
+    background: #24292e !important;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    /*Must use important to overide materialize css defaults*/
+    background: #55ACEE !important;
+    color: white;
+}
+
+/* linkedin */
+.fa-linkedin {
+    /*Must use important to overide materialize css defaults*/
+    background: #007bb5 !important;
+    color: white;
+}
+
+/* youtube */
+.fa-youtube {
+    /*Must use important to overide materialize css defaults*/
+    background: #bb0000 !important; 
+    color: white;
+}
+
+.enlargedblogposts {
+    display: block;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    margin-top: 10%;
+    margin: auto;
+    background-color: #ffffff;
+    opacity: 100%;
+}
+
+.formgrid {
+    color: black;
+    font-size: 20px;
+    font-family: Courier;
+    display: grid;
+    margin: auto;
+    margin-top: 5%;
+    width: 70%;
+    /* three columns in the grid*/
+    grid-template-columns: 1fr 1fr; 
+    gap: 4%;
+}
+
+.submitbutton {
+    display: block;
+    height: 40px;
+    margin-left: auto;
+    font-family: Courier;
+    margin-right: auto;
+    background-color: #ff6768;
+    border: none;
+    margin-top: 5%;
+    border-radius: 5%;
+}
+
+.fixedformmessage {
+    position: fixed;
+    margin: auto;
+    margin-top: 50%;
+    width: 30%;
+    height: 10%;
+    background-color: #ff6768;
+}
+
