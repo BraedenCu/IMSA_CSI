@@ -101,10 +101,16 @@ def convertGreenFilter(image):
 def customPage(styling):
     #ask user style questions, then display webpage using these responses. 
     #https://stackoverflow.com/questions/41354948/passing-variables-to-html-file-on-python
+
+    backgroundColor = str(input("\nWhat color would you like the background to be? Please enter a color (i.e blue yellow purple red green). Defauls to gray: "))
+    textColor = str(input("\nWhat color would you like the text to be? Please enter a color (i.e blue yellow purple red green). Defaults to white: "))
+
     htmlCode = open("base.html").read().format(firstImage="savedConvertedImages/converted0.gif", secondImage="savedConvertedImages/convertedSave.gif", 
         thirdImage="savedConvertedImages/converted1.gif", fourthImage="savedConvertedImages/converted2.gif", 
         fifthImage="savedConvertedImages/converted3.gif", sixthImage="savedConvertedImages/converted4.gif", 
-        seventhImage="savedConvertedImages/converted5.gif", eighthImage="savedConvertedImages/converted6.gif")
+        seventhImage="savedConvertedImages/converted5.gif", eighthImage="savedConvertedImages/converted6.gif",
+        backgroundColor=backgroundColor, textColor=textColor)
+
     f = open('summary.html', 'w')
     f.write(htmlCode)   
     f.close()
@@ -115,9 +121,9 @@ def userChooseOptions(imageArr, it):
     print("""
     Please enter what number based on the action you would like this program to perform on your images:
     type 1 to convert a random image to sepia
-    type 2 to convert an image to black and white
-    type 3 to convert an image to pointillism
-    type 4 to convert an image to green filter
+    type 2 to convert a random image to black and white
+    type 3 to convert a random image to pointillism
+    type 4 to convert a random image to green filter
     type 5 to display a custom page with your images  
     Once the modified image is displayed, please press the image again to reprompt the selections.""")
     

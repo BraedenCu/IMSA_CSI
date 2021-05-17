@@ -9,53 +9,18 @@ body .pageone {
     min-height: 100vh !important;
     height: 100vh;
     overflow: hidden;
+    margin-top: 0%;
 }
 
 .pageone {
     display: block;
     position: relative;
     width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0; 
     background-color: #222831;
     opacity: 100%;
-}
-
-.pagetwo {
-    display: block;
-    position: relative;
-    padding: 0px;
-    margin: 0px;
-    min-height: 100vh !important;
-    height: 100vh;
-    width: auto;
-    background-color: #222831;
-    opacity: 100%;
-    pointer-events: all;
-}
-
-.pagethree {
-    display: block;
-    position: relative;
-    padding: 0px;
-    margin: 0px;
-    min-height: 100vh !important;
-    height: 100vh;
-    width: auto;
-    background-color: #222831;
-    opacity: 100%;
-    pointer-events: all;
-}
-
-.projectspage {
-    display: block;
-    position: absolute;
-    background-color: #222831;
-    width: 100%;
-    height: 100%;
-    opacity: 100%;
-    scroll-behavior: auto;
-    overflow-y: auto !important;
 }
 
 .header {
@@ -74,57 +39,12 @@ body .pageone {
     width: 60%;
 }
 
-.disclaimer {
-    width: 60%;
-    color: black;
-    margin: auto;
-    margin-top: 6vh;
-    text-align: center;
-}
-
-.navigationbar {
-    color: black;
-    font-size: 20px;
-    font-family: Courier;
-    display: grid;
-    position: relative;
-    width: 44%;
-    margin: auto;
-    margin-top: 20px;
-    /* three columns in the grid*/
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    gap: 0.2%;
-}
-
 .fixedcenter {
     position: fixed;
     left: 50%;
     top:50%;
     transform: translateX(-50%, -50%);
 }
-
-.navigationbar button {
-    width: auto;
-    display: block;
-    height: 40px;
-    background-color: #222831;
-    color: black;
-    border: none;
-    border-radius: 5%;
-    margin-top: 0px;
-}
-
-.logobutton {
-    width: auto;
-    display: block;
-    height: 40px;
-    background-color: #222831;
-    color: black;
-    border: none;
-    border-radius: 5%;
-    margin-top: 0px;
-}
-
 
 .logobutton:focus {
     background-color: #222831 !important;
@@ -201,51 +121,6 @@ body .pageone {
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-}
-
-.chevron {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.chevronpageone {
-    display: block;
-    margin-top: 0.1vh;
-    display: block;
-    border: none;
-}
-
-.chevronpagetwo{
-    margin-bottom: 5%;
-}
-
-.chevronupsidedown {
-    transform: rotate(0.5turn);
-}
-
-.chevron img {
-    color: #ececec;
-    width: 40px;
-    height: 80px;
-}
-
-.chevron button {
-    /*Must use important to overide materialize css defaults*/
-    background: transparent;
-    border: none !important;
-    font-size:0;
-    background-color:#222831 !important;
-}
-
-.chevron button:hover {
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.chevron button:active {
-    /*Must use important to overide materialize css defaults*/
-    background-color:#222831 !important;
 }
 
 /* styling or all icons */
