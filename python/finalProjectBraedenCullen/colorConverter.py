@@ -74,7 +74,7 @@ def convertPointillism(image, name, win):
         circ.draw(win)
         i+=1
     win.getMouse()
-    win.save(str("converted" + '4' + name))
+    win.save(str("savedConvertedImages/" + "converted" + '4' + name))
     return None
 
 def convertGreenFilter(image):
@@ -96,8 +96,9 @@ def convertGreenFilter(image):
 def customPage(styling):
     #ask user style questions, then display webpage using these responses. 
     #https://stackoverflow.com/questions/41354948/passing-variables-to-html-file-on-python
-    htmlCode = open("base.html").read().format(firstImage="veryCuteDog.gif", secondImage="veryCuteDog.gif", 
-        thirdImage="veryCuteDog.gif", fourthImage="veryCuteDog.gif", fifthImage="veryCuteDog.gif")
+    htmlCode = open("base.html").read().format(firstImage="veryCuteDogresized.gif", secondImage="converted1veryCuteDogresized.gif", 
+        thirdImage="converted2veryCuteDogresized.gif", fourthImage="converted3veryCuteDogresized.gif", 
+        fifthImage="converted4veryCuteDogresized.gif")
     f = open('summary.html', 'w')
     f.write(htmlCode)   
     f.close()
@@ -123,7 +124,7 @@ def userChooseOptions(imageArr):
         convertedImage = convertSepia(image)
         convertedImage.draw(win1)
         #save file
-        convertedImage.save(str("converted" + '1' + name))
+        convertedImage.save(str("savedConvertedImages/" + "converted" + '1' + name))
         win1.getMouse()
         
     elif userInput == 2:
@@ -131,7 +132,7 @@ def userChooseOptions(imageArr):
         convertedImage = convertBW(image)
         convertedImage.draw(win2)
         #save file
-        convertedImage.save(str("converted" +'2' + name))
+        convertedImage.save(str("savedConvertedImages/" + "converted" +'2' + name))
         win2.getMouse()
 
     elif userInput == 3:
@@ -139,7 +140,7 @@ def userChooseOptions(imageArr):
         convertedImage = convertDots(image)
         convertedImage.draw(win3)
         #save file
-        convertedImage.save(str("converted" + '3' + name))
+        convertedImage.save(str("savedConvertedImages/" + "converted" + '3' + name))
         win3.getMouse()
 
     elif userInput == 4:
@@ -151,7 +152,7 @@ def userChooseOptions(imageArr):
         convertedImage = convertGreenFilter(image)
         convertedImage.draw(win5)
         #save file
-        convertedImage.save(str("converted" + '5' + name))
+        convertedImage.save(str("savedConvertedImages/" + "converted" + '5' + name))
         win5.getMouse()
 
     elif userInput == 6:
