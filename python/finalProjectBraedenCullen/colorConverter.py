@@ -1,3 +1,12 @@
+#Sources:
+#https://stackoverflow.com/questions/36434905/processing-an-image-to-sepia-tone-in-python
+#https://stackoverflow.com/questions/12201577/how-can-i-convert-an-rgb-image-into-grayscale-in-python
+#https://stackoverflow.com/questions/12201577/how-can-i-convert-an-rgb-image-into-grayscale-in-python
+#https://stackoverflow.com/questions/41354948/passing-variables-to-html-file-on-python
+#https://docs.python.org/3/library/webbrowser.html
+#http://www.cs.uky.edu/~keen/help/Zelle-graphics-reference.pdf
+
+
 from tkinter.constants import W
 from graphics import *
 from random import randrange
@@ -57,10 +66,6 @@ def convertBW(image):
             image.setPixel(i, x, color_rgb(uR, uG, uB))
     return image
     
-def convertDots():
-    #convert to dots
-    pass
-
 def convertPointillism(image, name, win):
     #convert to dot thing
     #iterate over every pixel and use the color conversion formula
@@ -74,7 +79,7 @@ def convertPointillism(image, name, win):
         circ.draw(win)
         i+=1
     win.getMouse()
-    win.save(str("savedConvertedImages/" + "converted" + '4' + name))
+    #win.save(str("savedConvertedImages/" + "converted" + '4' + name))
     return None
 
 def convertGreenFilter(image):
@@ -96,66 +101,57 @@ def convertGreenFilter(image):
 def customPage(styling):
     #ask user style questions, then display webpage using these responses. 
     #https://stackoverflow.com/questions/41354948/passing-variables-to-html-file-on-python
-    htmlCode = open("base.html").read().format(firstImage="veryCuteDogresized.gif", secondImage="converted1veryCuteDogresized.gif", 
-        thirdImage="converted2veryCuteDogresized.gif", fourthImage="converted3veryCuteDogresized.gif", 
-        fifthImage="converted4veryCuteDogresized.gif")
+    htmlCode = open("base.html").read().format(firstImage="savedConvertedImages/converted0.gif", secondImage="savedConvertedImages/convertedSave.gif", 
+        thirdImage="savedConvertedImages/converted2.gif", fourthImage="savedConvertedImages/converted3.gif", 
+        fifthImage="savedConvertedImages/converted4.gif")
     f = open('summary.html', 'w')
     f.write(htmlCode)   
     f.close()
     webbrowser.open('summary.html')
 
 
-def userChooseOptions(imageArr):
+def userChooseOptions(imageArr, it):
     print("""
     Please enter what number based on the action you would like this program to perform on your images:
     type 1 to convert a random image to sepia
     type 2 to convert an image to black and white
-    type 3 to convert an image to dots
-    type 4 to convert an image to pointillism
-    type 5 to convert an image to green filter
-    type 6 to display a custom page with your images  """)
+    type 3 to convert an image to pointillism
+    type 4 to convert an image to green filter
+    type 5 to display a custom page with your images  """)
     
     userInput = eval(input("Please enter your value here: "))
 
     image, name = getImage(imageArr)
 
     if userInput == 1: 
-        win1 = GraphWin(str(name + ": " + "Sepia Colorscheme"), image.getWidth(), image.getHeight())
+        win1 = GraphWin(str(name + ": " + "Sepia Colorscheme"), 500, 500)
         convertedImage = convertSepia(image)
         convertedImage.draw(win1)
         #save file
-        convertedImage.save(str("savedConvertedImages/" + "converted" + '1' + name))
+        convertedImage.save(str("savedConvertedImages/" + "converted" + str(it) + '.gif'))
         win1.getMouse()
         
     elif userInput == 2:
-        win2 = GraphWin(str(name + ": " + "Black and White Colorscheme"), image.getWidth(), image.getHeight())
+        win2 = GraphWin(str(name + ": " + "Black and White Colorscheme"), 500, 500)
         convertedImage = convertBW(image)
         convertedImage.draw(win2)
         #save file
-        convertedImage.save(str("savedConvertedImages/" + "converted" +'2' + name))
+        convertedImage.save(str("savedConvertedImages/" + "converted" + str(it) + '.gif'))
         win2.getMouse()
 
     elif userInput == 3:
-        win3 = GraphWin(str(name + ": " + "Dots Colorscheme"), image.getWidth(), image.getHeight())
-        convertedImage = convertDots(image)
-        convertedImage.draw(win3)
-        #save file
-        convertedImage.save(str("savedConvertedImages/" + "converted" + '3' + name))
-        win3.getMouse()
-
-    elif userInput == 4:
-        win4 = GraphWin(str(name + ": " + "Pointillism Colorscheme"), image.getWidth(), image.getHeight())
+        win4 = GraphWin(str(name + ": " + "Pointillism Colorscheme"), 500, 500)
         convertedImage = convertPointillism(image, name, win4)
 
-    elif userInput == 5:
-        win5 = GraphWin(str(name + ": " + "Green Filter Colorscheme"), image.getWidth(), image.getHeight())
+    elif userInput == 4:
+        win5 = GraphWin(str(name + ": " + "Green Filter Colorscheme"), 500, 500)
         convertedImage = convertGreenFilter(image)
         convertedImage.draw(win5)
         #save file
-        convertedImage.save(str("savedConvertedImages/" + "converted" + '5' + name))
+        convertedImage.save(str("savedConvertedImages/" + "converted" + str(it) + '.gif'))
         win5.getMouse()
 
-    elif userInput == 6:
+    elif userInput == 5:
         customPage(image)
 
     else:
@@ -163,8 +159,10 @@ def userChooseOptions(imageArr):
 
 def main():
     while True:
-        imgArr = ["veryCuteDogresized.gif"]
-        userChooseOptions(imgArr)
+        imgArr = ["image1.gif", "image2.gif", "image3.gif", "image4.gif", "image5.gif", "image6.gif", "image7.gif"]
+        it = 0
+        userChooseOptions(imgArr, it)
+        it+=1
     
 if __name__=="__main__":
     main()
