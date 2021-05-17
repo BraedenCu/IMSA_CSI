@@ -5,9 +5,9 @@
 #https://stackoverflow.com/questions/41354948/passing-variables-to-html-file-on-python
 #https://docs.python.org/3/library/webbrowser.html
 #http://www.cs.uky.edu/~keen/help/Zelle-graphics-reference.pdf
+#https://www.codementor.io/@isaib.cicourel/image-manipulation-in-python-du1089j1u
+#https://pillow.readthedocs.io/en/stable/reference/Image.html
 
-
-from tkinter.constants import W
 from graphics import *
 from random import randrange
 import time
@@ -102,8 +102,9 @@ def customPage(styling):
     #ask user style questions, then display webpage using these responses. 
     #https://stackoverflow.com/questions/41354948/passing-variables-to-html-file-on-python
     htmlCode = open("base.html").read().format(firstImage="savedConvertedImages/converted0.gif", secondImage="savedConvertedImages/convertedSave.gif", 
-        thirdImage="savedConvertedImages/converted2.gif", fourthImage="savedConvertedImages/converted3.gif", 
-        fifthImage="savedConvertedImages/converted4.gif")
+        thirdImage="savedConvertedImages/converted1.gif", fourthImage="savedConvertedImages/converted2.gif", 
+        fifthImage="savedConvertedImages/converted3.gif", sixthImage="savedConvertedImages/converted4.gif", 
+        seventhImage="savedConvertedImages/converted5.gif", eighthImage="savedConvertedImages/converted6.gif")
     f = open('summary.html', 'w')
     f.write(htmlCode)   
     f.close()
@@ -117,7 +118,8 @@ def userChooseOptions(imageArr, it):
     type 2 to convert an image to black and white
     type 3 to convert an image to pointillism
     type 4 to convert an image to green filter
-    type 5 to display a custom page with your images  """)
+    type 5 to display a custom page with your images  
+    Once the modified image is displayed, please press the image again to reprompt the selections.""")
     
     userInput = eval(input("Please enter your value here: "))
 
@@ -158,9 +160,9 @@ def userChooseOptions(imageArr, it):
         print("please enter a valid number.")
 
 def main():
+    it = 0
     while True:
         imgArr = ["image1.gif", "image2.gif", "image3.gif", "image4.gif", "image5.gif", "image6.gif", "image7.gif"]
-        it = 0
         userChooseOptions(imgArr, it)
         it+=1
     
