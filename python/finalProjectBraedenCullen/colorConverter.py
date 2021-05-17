@@ -59,9 +59,20 @@ def convertDots():
     #convert to dots
     pass
 
-def convertPointillism():
-    #convert to point
-    pass
+def convertPointillism(image, win):
+    #convert to dot thing
+    #iterate over every pixel and use the color conversion formula
+    i=0
+    while (i < 20000):
+        x = randrange(0, image.getWidth())
+        y = randrange(0, image.getHeight())
+        r, g, b = image.getPixel(x, y)
+        circ = Circle(Point(x, y), 2)
+        circ.setFill(color_rgb(r, g, b))
+        circ.draw(win)
+        i+=1
+    win.getMouse()
+    return None
 
 def convertGreenFilter(image):
     #convert to black and white
@@ -95,35 +106,49 @@ def userChooseOptions(imageArr):
     
     userInput = eval(input("Please enter your value here: "))
 
-    win = GraphWin("Quarter Project", 500, 500)
     image, name = getImage(imageArr)
 
     if userInput == 1: 
+        win1 = GraphWin(str(name + ": " + "Sepia Colorscheme"), image.getWidth(), image.getHeight())
         convertedImage = convertSepia(image)
-        convertedImage.draw(win)
+        convertedImage.draw(win1)
+        #save file
+        convertedImage.save(str("converted" + name))
+        win1.getMouse()
         
     elif userInput == 2:
+        win2 = GraphWin(str(name + ": " + "Black and White Colorscheme"), image.getWidth(), image.getHeight())
         convertedImage = convertBW(image)
-        convertedImage.draw(win)
+        convertedImage.draw(win2)
+        #save file
+        convertedImage.save(str("converted" + name))
+        win2.getMouse()
 
     elif userInput == 3:
+        win3 = GraphWin(str(name + ": " + "Dots Colorscheme"), image.getWidth(), image.getHeight())
         convertedImage = convertDots(image)
-        convertedImage.draw(win)
+        convertedImage.draw(win3)
+        #save file
+        convertedImage.save(str("converted" + name))
+        win3.getMouse()
 
     elif userInput == 4:
-        convertedImage = convertPointillism(image)
-        convertedImage.draw(win)
+        win4 = GraphWin(str(name + ": " + "Pointillism Colorscheme"), image.getWidth(), image.getHeight())
+        convertedImage = convertPointillism(image, win4)
 
     elif userInput == 5:
+        win5 = GraphWin(str(name + ": " + "Green Filter Colorscheme"), image.getWidth(), image.getHeight())
         convertedImage = convertGreenFilter(image)
-        convertedImage.draw(win)
+        convertedImage.draw(win5)
+        #save file
+        convertedImage.save(str("converted" + name))
+        win5.getMouse()
 
     elif userInput == 6:
         customPage(image)
     else:
         print("please enter a valid number.")
-    
-    win.getMouse()
+
     
 
     
