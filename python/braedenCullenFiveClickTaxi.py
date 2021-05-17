@@ -57,8 +57,12 @@ def createTaxi():
     taxiText = Text(Point((coord.getX() + (width/2)), (coord.getY() - (height/2))), "Taxi")
     taxiText.setSize(30)
     taxiText.draw(win)
-    taxiText2 = Text(Point(250, 50), "I made this taxi with five clicks!! Hope you like my TAXI. Click anywhere to close the window.")
+    taxiText2 = Text(Point(250, 50), "Click anywhere to close the window.")
+    taxiText3 = Text(Point(250, 450), "I made this taxi with five clicks!! Hope you like my TAXI")
+    taxiText.setSize(20)
+    taxiText.setSize(20)
     taxiText2.draw(win)
+    taxiText3.draw(win)
     win.getMouse()
     
 if __name__=="__main__":
