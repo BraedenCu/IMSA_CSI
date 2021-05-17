@@ -16,7 +16,6 @@ def fourCirclePattern(circleList, win):
         CircleSimplified4.c.move(-i, -i)
         time.sleep(0.02)
 
-
 def main():
     win = GraphWin("My Window", 500, 500)
     n1 = input("Input a number between 1 and 9: ")
