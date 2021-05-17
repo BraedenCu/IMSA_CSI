@@ -1,3 +1,4 @@
+from tkinter.constants import W
 from graphics import *
 from random import randrange
 import time
@@ -19,6 +20,7 @@ def getImage(imagePathArray):
             else:
                 continue
     text = image
+    
     img = Image(Point(250, 250), image)
     #showImage(img, text)
     return img, text
@@ -59,7 +61,7 @@ def convertDots():
     #convert to dots
     pass
 
-def convertPointillism(image, win):
+def convertPointillism(image, name, win):
     #convert to dot thing
     #iterate over every pixel and use the color conversion formula
     i=0
@@ -72,6 +74,7 @@ def convertPointillism(image, win):
         circ.draw(win)
         i+=1
     win.getMouse()
+    win.save(str("converted" + '4' + name))
     return None
 
 def convertGreenFilter(image):
@@ -90,9 +93,16 @@ def convertGreenFilter(image):
             image.setPixel(i, x, color_rgb(uR, uG, uB))
     return image
 
-def customPage():
+def customPage(styling):
     #ask user style questions, then display webpage using these responses. 
-    pass
+    #https://stackoverflow.com/questions/41354948/passing-variables-to-html-file-on-python
+    htmlCode = open("base.html").read().format(firstImage="veryCuteDog.gif", secondImage="veryCuteDog.gif", 
+        thirdImage="veryCuteDog.gif", fourthImage="veryCuteDog.gif", fifthImage="veryCuteDog.gif")
+    f = open('summary.html', 'w')
+    f.write(htmlCode)   
+    f.close()
+    webbrowser.open('summary.html')
+
 
 def userChooseOptions(imageArr):
     print("""
@@ -113,7 +123,7 @@ def userChooseOptions(imageArr):
         convertedImage = convertSepia(image)
         convertedImage.draw(win1)
         #save file
-        convertedImage.save(str("converted" + name))
+        convertedImage.save(str("converted" + '1' + name))
         win1.getMouse()
         
     elif userInput == 2:
@@ -121,7 +131,7 @@ def userChooseOptions(imageArr):
         convertedImage = convertBW(image)
         convertedImage.draw(win2)
         #save file
-        convertedImage.save(str("converted" + name))
+        convertedImage.save(str("converted" +'2' + name))
         win2.getMouse()
 
     elif userInput == 3:
@@ -129,34 +139,31 @@ def userChooseOptions(imageArr):
         convertedImage = convertDots(image)
         convertedImage.draw(win3)
         #save file
-        convertedImage.save(str("converted" + name))
+        convertedImage.save(str("converted" + '3' + name))
         win3.getMouse()
 
     elif userInput == 4:
         win4 = GraphWin(str(name + ": " + "Pointillism Colorscheme"), image.getWidth(), image.getHeight())
-        convertedImage = convertPointillism(image, win4)
+        convertedImage = convertPointillism(image, name, win4)
 
     elif userInput == 5:
         win5 = GraphWin(str(name + ": " + "Green Filter Colorscheme"), image.getWidth(), image.getHeight())
         convertedImage = convertGreenFilter(image)
         convertedImage.draw(win5)
         #save file
-        convertedImage.save(str("converted" + name))
+        convertedImage.save(str("converted" + '5' + name))
         win5.getMouse()
 
     elif userInput == 6:
         customPage(image)
+
     else:
         print("please enter a valid number.")
 
-    
-
-    
 def main():
-    x, y = 500, 500
-    imgArr = ["veryCuteDogresized.gif"]
-    #win = GraphWin("Final Project", x, y)
-    userChooseOptions(imgArr)
+    while True:
+        imgArr = ["veryCuteDogresized.gif"]
+        userChooseOptions(imgArr)
     
 if __name__=="__main__":
     main()
